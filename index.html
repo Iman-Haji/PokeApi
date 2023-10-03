@@ -4,17 +4,16 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>POKEDEX</title>
+  <title>pokeApi</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>.・。.・゜✭・.・✫・゜・。  POKEMONDEX  ・。.・゜✭・.・✫・゜・。.</h1>
-  <h3>In here you can see all the pokemons from generations!</h3>
-  <!--div, image tag
-  ADD ID AND NUMBER--> 
+  
+    <h1>.・。.・゜✭・.・✫・゜・。  POKEAPI  ・。.・゜✭・.・✫・゜・。.</h1>
+    <h3>In here you can see all the pokemons from generations!</h3>
 
   <div class="cards">
   <section class="column">
@@ -22,7 +21,19 @@
   </div>
 
 
+    <div class="container">
+    <div id="searchPokemon">
+      <input
+      type="text"
+      name="searchBar"
+      id="searchBar"
+      placeholder= "Search for a Pokemon character."/>
+    </div>
+    <ul id="pokeList"></ul>
+  </div>
 
+  <!--div, image tag
+  ADD ID AND NUMBER--> 
   <script src="index.js"></script>
 </body>
 </html>

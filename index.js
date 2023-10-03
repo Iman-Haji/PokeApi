@@ -1,8 +1,31 @@
 const content = document.querySelector('.cards');
 let pokeData = [1, 2, 3];
 
-// response = res. it can be called anything
+const PokemonList = document.getElementById('pokeList');
+const searchBar = document.getElementById('searchBar');
+let pokemonCharacters = [];
 
+
+searchBar.addEventListener('keyup', (e) => {
+  const searchString = e.target.value.toLowerCase();
+
+
+  const characterFilter = pokemonCharacters.filter((character) => {
+    return character.name.toLowerCase().includes(searchString);
+  });
+  displayCharacters(characterFilter);
+})
+
+const characterLoad = async () => {
+  try {
+    const response = await fetch('https://pokeapi.co/api/v2/pokemon?limit=121&offset=0');
+    displayCharacters(pokemonCharacters);
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+// response = res. it can be called anything
 const fetchData = async () => {
   await fetch('https://pokeapi.co/api/v2/pokemon?limit=121&offset=0')
     .then((response => response.json()))
