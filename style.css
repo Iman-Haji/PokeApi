@@ -14,10 +14,9 @@ body {
 
 .cards {
   padding: 20px;
-  font-size: 30px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: left;
+  /*justify-content: left;*/
 }
 
 .card {
@@ -27,15 +26,30 @@ body {
   border: 2px solid #ccc;
   border-radius: 7px;
   max-width: 250px;
+  box-shadow: 0 5px 9px 0 #ffffff;
+  transition: 0.2s;
+}
+
+.card:hover {
+  box-shadow: 0 9px 15px 0 #865d52;
+
 }
 
 p {
   color: #faeeeb;
+  font-size: 25px;
+  /*align-items: center;*/
+  text-align: center;
+  font-size: 1.2rem;
+  line-height: 140%;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  text-shadow: 2px 2px #000000;
 }
 
 
 
-/* div, image tag justigy content alighn content*/
+/* div, image tag justigy content alighn content-- say image strong cards img width 100%*/
 h1 {
   color: #faeeeb;
   text-align: center;
