@@ -1,0 +1,49 @@
+​​​​​​* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url(https://wallpapercave.com/wp/wp5475487.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  font-family: 'Rajdhani', sans-serif;
+}
+
+.cards {
+  padding: 20px;
+  font-size: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
+}
+
+.card {
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid #ccc;
+  border-radius: 7px;
+  max-width: 250px;
+}
+
+p {
+  color: #faeeeb;
+}
+
+
+
+/* div, image tag justigy content alighn content*/
+h1 {
+  color: #faeeeb;
+  text-align: center;
+  font-size: 3rem;
+}
+
+h3 {
+  color: #fdcabd;
+  text-align: center;
+  font-size: 30px;
+}
