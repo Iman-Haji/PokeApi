@@ -1,14 +1,12 @@
 const content = document.querySelector('.cards');
 let pokeData = [1, 2, 3];
-
+/*
 const PokemonList = document.getElementById('pokeList');
 const searchBar = document.getElementById('searchBar');
 let pokemonCharacters = [];
 
-
 searchBar.addEventListener('keyup', (e) => {
   const searchString = e.target.value.toLowerCase();
-
 
   const characterFilter = pokemonCharacters.filter((character) => {
     return character.name.toLowerCase().includes(searchString);
@@ -24,6 +22,8 @@ const characterLoad = async () => {
     console.error(error);
   }
 }
+*/
+
 
 // response = res. it can be called anything
 const fetchData = async () => {
@@ -52,16 +52,21 @@ const fetchData = async () => {
 const pokeCards = () => {
   const cards = pokeData
     .map((pokemon) => {
+      console.log(pokemon.types)
       return `<div class="card">
     <img src="${pokemon.img}" alt="Pikachu">
     <h2></h2>
-      <p>${pokemon.name}</p>
-  </div>`;
-
+    <p>${pokemon.name}</p>
+    <div>
+    ${pokemon.types.map((type) => getTypeString(type)).join(' ')}
+    </div>
+  </div>`; //ADD MAP
     }).join('') //helps with comma issues
-
 
   content.innerHTML = cards;
 };
 
+const getTypeString = (type) => {
+  return `<p>${type.type.name}</p>`
+}
 fetchData();
