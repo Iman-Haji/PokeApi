@@ -1,29 +1,34 @@
 const content = document.querySelector('.cards');
-let pokeData = [1, 2, 3];
-/*
-const PokemonList = document.getElementById('pokeList');
-const searchBar = document.getElementById('searchBar');
-let pokemonCharacters = [];
+let pokeData = [];
 
-searchBar.addEventListener('keyup', (e) => {
-  const searchString = e.target.value.toLowerCase();
 
-  const characterFilter = pokemonCharacters.filter((character) => {
-    return character.name.toLowerCase().includes(searchString);
-  });
-  displayCharacters(characterFilter);
-})
+const charactersList = document.getElementById('pokeList');
+let pokeCharacters = [];
 
-const characterLoad = async () => {
+
+const loadCharacters = async () => {
   try {
-    const response = await fetch('https://pokeapi.co/api/v2/pokemon?limit=121&offset=0');
-    displayCharacters(pokemonCharacters);
-  } catch (error) {
-    console.error(error);
+    const res = await fetch('https://pokeapi.co/api/v2/pokemon?limit=121&offset=0');
+    pokeCharacters = await res.json();
+    displayCharacters(pokeCharacters);
+  } catch (err) {
+    console.error(err);
   }
-}
-*/
+};
 
+const displayCharacters = (pokemon) => {
+  const htmlString = pokemon.map((pokemon) => {
+    return `<li class="pokeCharactersList">
+                <p>types: ${pokemon.types}</p>
+                <p>name: ${pokemon.name}</p>
+                <img src="${pokemon.img}"></img>
+            </li>`;
+  }).join('');
+
+  charactersList.innerHTML = htmlString;
+};
+
+loadCharacters();
 
 // response = res. it can be called anything
 const fetchData = async () => {
@@ -58,6 +63,8 @@ const pokeCards = () => {
     <h2></h2>
     <p>${pokemon.name}</p>
     <div>
+ 
+    
     ${pokemon.types.map((type) => getTypeString(type)).join(' ')}
     </div>
   </div>`; //ADD MAP
